@@ -1,11 +1,12 @@
 var gulp = require('gulp'), 
     sass = require('gulp-ruby-sass') 
-    notify = require("gulp-notify")
+    notify = require('gulp-notify')
     merge = require('merge-stream')
     bower = require('gulp-bower');
 
 var config = {
-     sassPath: './resources/sass',
+     sassPath: './src/sass',
+    srcPath:  './src',
      bowerDir: './bower_components' 
 }
 
@@ -34,7 +35,7 @@ gulp.task('css', function() { 
          .pipe(sass({
              style: 'compressed',
              loadPath: [
-                 './resources/sass',
+                 './src/sass',
                  config.bowerDir + '/bootstrap-sass-official/assets/stylesheets',
                  config.bowerDir + '/fontawesome/scss',
              ]
